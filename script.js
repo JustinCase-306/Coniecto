@@ -30,3 +30,13 @@ function numberGuessing(){
     // Inputfeld leeren
     inputGuessHTML.value = "";
 }
+
+function resetGame(){
+    numberToGuess = Math.floor(Math.random() * 101);
+    guessingTries = 0
+    triesDisplay.innerHTML = "Versuche: 0";
+    inputGuessHTML.value = "";
+    inputGuessHTML.disabled = false;
+    document.querySelector("button").disabled = false;
+    gameStatus.innerHTML = "Bitte rate die korrekte Zahl zwischen 1 und 100!"
+}
