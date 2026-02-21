@@ -7,7 +7,7 @@ const triesDisplay = document.getElementById('triesDisplay');
 let numberToGuess = Math.floor(Math.random() * 101);
 let guessingTries = 0;
 
-function numberGuessing() {
+function numberGuessing(){
     // Werte auslesen bzw. ändern
     let playerGuess = Number(inputGuessHTML.value);
     guessingTries = guessingTries + 1;
