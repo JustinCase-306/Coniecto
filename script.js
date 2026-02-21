@@ -2,6 +2,7 @@
 const inputGuessHTML = document.getElementById('inputGuessHTML');
 const gameStatus = document.getElementById('gameStatus');
 const triesDisplay = document.getElementById('triesDisplay');
+const jsConfetti = new JSConfetti();
 
 // Variablen erzeugen, welche dauerhaft genutzt werden
 let numberToGuess = Math.floor(Math.random() * 101);
@@ -16,6 +17,7 @@ function numberGuessing(){
     // Gewinn - Rückmeldungen
     if (playerGuess == numberToGuess) {
     gameStatus.innerHTML = "Du hast die richtige Zahl erraten!";
+    jsConfetti.addConfetti();
     // Eingabe sperren
     inputGuessHTML.disabled = true;
     document.querySelector("button").disabled = true;
