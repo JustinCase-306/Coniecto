@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ratespiel</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JunusErgin/fast-ui/style.css">
+    </head>
+    <body>
+        <header>Ratespiel</header>
+        <div class="container">
+            <h4 id="gameStatus">Bitte rate die korrekte Zahl!</h4>
+            <h5 id="triesDisplay">Versuche: 0</h5>
+            <form onsubmit="numberGuessing(); return false;">
+                <!-- Zahl eingeben -->
+                <input id="inputGuessHTML" type="number" required style = "width: 200px;" placeholder = "Bitte Zahl eingeben!">
+                <!-- Raten -->
+                <button type="submit">Raten</button>
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

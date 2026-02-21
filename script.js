@@ -1,0 +1,32 @@
+// Elemente als Variablen holen
+const inputGuessHTML = document.getElementById('inputGuessHTML');
+const gameStatus = document.getElementById('gameStatus');
+const triesDisplay = document.getElementById('triesDisplay');
+
+// Variablen erzeugen, welche dauerhaft genutzt werden
+let numberToGuess = Math.floor(Math.random() * 101);
+let guessingTries = 0;
+
+function numberGuessing() {
+    // Werte auslesen bzw. ändern
+    let playerGuess = Number(inputGuessHTML.value);
+    guessingTries = guessingTries + 1;
+    triesDisplay.innerHTML = "Versuche: " + guessingTries;
+
+    // Gewinn - Rückmeldungen
+    if (playerGuess == numberToGuess) {
+    gameStatus.innerHTML = "Du hast die richtige Zahl erraten!";
+    // Eingabe sperren
+    inputGuessHTML.disabled = true;
+    document.querySelector("button").disabled = true;
+    return false;
+
+    } else if (playerGuess > numberToGuess) {
+        gameStatus.innerHTML = "Die gesuchte Zahl ist kleiner!";
+    } else {
+        gameStatus.innerHTML = "Die gesuchte Zahl ist größer!";
+    }
+
+    // Inputfeld leeren
+    inputGuessHTML.value = "";
+}
