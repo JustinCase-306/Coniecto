@@ -5,7 +5,7 @@ const triesDisplay = document.getElementById('triesDisplay');
 const jsConfetti = new JSConfetti();
 
 // Variablen erzeugen, welche dauerhaft genutzt werden
-let numberToGuess = Math.floor(Math.random() * 101);
+let numberToGuess = Math.floor(Math.random() * 100) + 1;
 let guessingTries = 0;
 
 function numberGuessing(){
