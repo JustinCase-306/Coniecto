@@ -17,7 +17,12 @@ function numberGuessing(){
     // Gewinn - Rückmeldungen
     if (playerGuess == numberToGuess) {
     gameStatus.innerHTML = "Du hast die richtige Zahl erraten!";
-    jsConfetti.addConfetti();
+    // Konfetti
+    jsConfetti.addConfetti({
+        emojis: ['🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '🟤', '⚫', '⚪'],
+        emojiSize: 100,
+        confettiNumber: 30,
+    });
     // Eingabe sperren
     inputGuessHTML.disabled = true;
     document.querySelector("button").disabled = true;
