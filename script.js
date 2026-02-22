@@ -11,22 +11,27 @@ let guessingTries = 0;
 function numberGuessing(){
     // Werte auslesen bzw. ändern
     let playerGuess = Number(inputGuessHTML.value);
+    // Nur Zahlen zwischen 1 und 100 erlauben
+    if (playerGuess > 100 || playerGuess < 1){
+        inputGuessHTML.value = "";
+        gameStatus.innerHTML = "Du darfst nur Zahlen zwischen 1 und 100 eingeben!"
+        return;
+    }
+    // Hier Versuche hochzählen, damit sie nicht schon davor gezählt werden
     guessingTries = guessingTries + 1;
     triesDisplay.innerHTML = "Versuche: " + guessingTries;
-
     // Gewinn - Rückmeldungen
-    if (playerGuess == numberToGuess) {
-    gameStatus.innerHTML = "Du hast die richtige Zahl erraten!";
-    // Konfetti
-    jsConfetti.addConfetti();
-    // Eingabe sperren
-    inputGuessHTML.disabled = true;
-    document.querySelector("button").disabled = true;
-    return false;
-
-    } else if (playerGuess > numberToGuess) {
+    if (playerGuess == numberToGuess){
+        gameStatus.innerHTML = "Du hast die richtige Zahl erraten!";
+        // Konfetti
+        jsConfetti.addConfetti();
+        // Eingabe sperren
+        inputGuessHTML.disabled = true;
+        document.querySelector("button").disabled = true;
+        return false;
+    } else if (playerGuess > numberToGuess){
         gameStatus.innerHTML = "Die gesuchte Zahl ist kleiner!";
-    } else {
+    } else if (playerGuess < numberToGuess){
         gameStatus.innerHTML = "Die gesuchte Zahl ist größer!";
     }
 
